@@ -10,6 +10,9 @@ class SumAccountsBalance extends Specification {
         bank = new Bank()
     }
 
+    def cleanup () {
+        Bank.accountNumber = 0
+    }
 
     def "should get balance of all accounts" () {
         given: "there are two accounts"

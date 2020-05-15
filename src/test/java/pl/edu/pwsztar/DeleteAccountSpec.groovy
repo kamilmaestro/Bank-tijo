@@ -11,6 +11,10 @@ class DeleteAccountSpec extends Specification {
         bank = new Bank()
     }
 
+    def cleanup () {
+        Bank.accountNumber = 0
+    }
+
     def "should delete account with empty balance" () {
         given: "there is an account"
             int accountNumber = bank.createAccount()

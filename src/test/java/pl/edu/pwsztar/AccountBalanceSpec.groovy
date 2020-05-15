@@ -11,6 +11,10 @@ class AccountBalanceSpec extends Specification {
         bank = new Bank()
     }
 
+    def cleanup () {
+        Bank.accountNumber = 0
+    }
+
     @Unroll
     def "should get balance of an existing account" () {
         given: "there is an account"
@@ -25,6 +29,7 @@ class AccountBalanceSpec extends Specification {
             balance     ||  expected
             200         ||  200
             1           ||  1
+            2           ||  2
     }
 
     def "should not get balance of a not existing account" () {

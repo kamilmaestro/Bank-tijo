@@ -10,6 +10,10 @@ class DepositSpec extends Specification {
         bank = new Bank()
     }
 
+    def cleanup () {
+        Bank.accountNumber = 0
+    }
+
     def "should deposit amount of money to existing account" () {
         given: "there is an account"
             int accountNumber = bank.createAccount()

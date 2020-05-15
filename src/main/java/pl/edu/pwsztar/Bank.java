@@ -8,7 +8,7 @@ import java.util.Optional;
 class Bank implements BankOperation {
 
     private static final int EMPTY_BALANCE = 0;
-    private static int accountNumber = 0;
+    static int accountNumber = 0;
     private final AccountRepository accountRepository;
 
     public Bank() {

@@ -10,6 +10,10 @@ class WithdrawSpec extends Specification {
         bank = new Bank()
     }
 
+    def cleanup () {
+        Bank.accountNumber = 0
+    }
+
     def "should withdraw money from an existing account if its balance is bigger than amount to withdraw" () {
         given: "there is an account"
             int accountNumber = bank.createAccount()

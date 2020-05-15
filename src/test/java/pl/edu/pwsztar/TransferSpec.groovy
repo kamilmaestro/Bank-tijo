@@ -10,6 +10,10 @@ class TransferSpec extends Specification {
         bank = new Bank()
     }
 
+    def cleanup () {
+        Bank.accountNumber = 0
+    }
+
     def "should make a transfer between two existing accounts if balance of the first account enables this" () {
         given: "there are two accounts"
             int accountNumber = bank.createAccount()
